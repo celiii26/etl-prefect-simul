@@ -77,7 +77,7 @@ def load_to_bigquery(df: pd.DataFrame, project_id: str, dataset: str, table: str
 @flow(name="LastFM ETL Flow")
 def etl_flow():
     api_key = LASTFM_API_KEY
-    project_id = "exercise-project-468404"
+    project_id = "<YOUR_PROJECT_ID>" # get it from bigquery
     dataset = "music_data"
     table = "lastfm_top_tracks"
     
@@ -96,3 +96,4 @@ etl_flow.serve(
     cron="0 0 * * *" # run daily at midnight 
 
 )
+
