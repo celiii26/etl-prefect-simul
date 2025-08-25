@@ -7,8 +7,8 @@ import datetime
 from prefect import flow, task # pip install prefect
 
 # Configure Key and Credentials Needed
-LASTFM_API_KEY="e33f1effcffb716428c7222996e4d2b7"
-GOOGLE_APPLICATION_CREDENTIALS="D:\pwdk\Prefect\exercise-project-468404-5dbd9dabdecb.json"
+LASTFM_API_KEY="<YOUR_API_KEY>"
+GOOGLE_APPLICATION_CREDENTIALS="<YOUR_JSON_CREDENTIAL_FILE_PATH>"
 # Setup credentials
 scopes = ['https://www.googleapis.com/auth/bigquery']
 credentials = service_account.Credentials.from_service_account_file(GOOGLE_APPLICATION_CREDENTIALS, scopes=scopes)
@@ -94,4 +94,5 @@ if __name__ == "__main__":
 etl_flow.serve(
     name="lastfm-etl-daily",
     cron="0 0 * * *" # run daily at midnight 
+
 )
